@@ -65,7 +65,7 @@ end:
 	# $2 = Address of final LED
 	seti $2 0
 	add $2 $0
-	addi $2 65
+	addi $2 64
 	
 	# GO TO RESET LEDS
 	bnz $2 resetLEDs # Jump unconditionally
