@@ -1,5 +1,5 @@
 start:
-	seti $1 0 # The number of the row you are currently on
+	seti $1 7 # The number of the row you are currently on
 	seti $2 -1 # Last row blocks (11111111_2)
 	seti $3 126 # Current row blocks (01111110_2)
 
@@ -159,9 +159,7 @@ buttonPress:
 	bz $3 lose
 	
 	# See if they won
-	addi $1 -7 # (Can only check if $1 == 0)
 	bz $1 win
-	addi $1 7
 	
 	# OUTPUT THE BLOCKS FROM THE LAST ROW ONE-BY-ONE
 	# Copy $3 into $0 
@@ -216,7 +214,7 @@ buttonPress:
 	shift $1 1
 	
 	# Move on to the next row
-	addi $1 1
+	addi $1 -1
 	
 	# Restore the blocks
 	add $3 $0 # $3 = $0 (because $3 is 0 right now)
